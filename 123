@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>حاسبة الدولار إلى الدينار</title>
+</head>
+<body style="font-family: Arial; background:#111; color:#fff; padding:20px;">
+
+  <h2>حوّلي الدولار إلى الدينار</h2>
+  <p>اكتبي قيمة الدولار:</p>
+
+  <input id="usd" type="number" placeholder="مثال: 1"
+         style="padding:10px; width:200px; border-radius:8px;">
+  <button onclick="convert()"
+          style="padding:10px 20px; border-radius:8px; margin-left:10px; cursor:pointer;">
+    حساب
+  </button>
+
+  <h3 style="margin-top:20px;">النتيجة:</h3>
+  <div id="result" style="font-size:22px; margin-top:10px; color:#4cff8f;">
+    —
+  </div>
+
+  <script>
+    function convert() {
+      let usd = parseFloat(document.getElementById("usd").value);
+
+      if (isNaN(usd)) {
+        document.getElementById("result").innerHTML = "رجاءً ضعي رقم صحيح ❤️";
+        return;
+      }
+
+      // الحساب الصحيح
+      let dz = usd * 280 + 200;
+
+      document.getElementById("result").innerHTML =
+        dz.toLocaleString('en-US') + " دج";
+    }
+  </script>
+
+</body>
+</html>
